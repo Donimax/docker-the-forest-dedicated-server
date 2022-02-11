@@ -1,55 +1,55 @@
 // Dedicated Server Settings.
 // Server IP address - Note: If you have a router, this address is the internal address, and you need to configure ports forwarding
-serverIP 0.0.0.0
+serverIP ##SERVERIP##
 // Steam Communication Port - Note: If you have a router you will need to open this port.
-serverSteamPort 8766
+serverSteamPort ##SERVERSTEAMPORT##
 // Game Communication Port - Note: If you have a router you will need to open this port.
-serverGamePort 27015
+serverGamePort ##SERVERGAMEPORT##
 // Query Communication Port - Note: If you have a router you will need to open this port.
-serverQueryPort 27016
+serverQueryPort ##SERVERQUERYPORT##
 // Server display name
-serverName jammsen-docker-generated-##RANDOM##
+serverName ##SERVERNAME##
 // Maximum number of players
-serverPlayers 8
+serverPlayers ##SERVERPLAYERS##
 // Enable VAC (Valve Anti-cheat System at the server. Must be set off or on
-enableVAC off
+enableVAC ##ENABLEVAC##
 // Server password. blank means no password
-serverPassword
+serverPassword ##SERVERPASSWORD##
 // Server administration password. blank means no password
-serverPasswordAdmin
+serverPasswordAdmin ##SERVERPASSWORDADMIN##
 // Your Steam account name. blank means anonymous
-serverSteamAccount ###serverSteamAccount###
+serverSteamAccount ##SERVERSTEAMACCOUNT##
 // Time between server auto saves in minutes - The minumum time is 15 minutes, the default time is 30
-serverAutoSaveInterval 30
+serverAutoSaveInterval ##SERVERAUTOSAVEINTERVAL##
 // Game difficulty mode. Must be set to Peaceful Normal or Hard
-difficulty Normal
+difficulty ##DIFFICULTY##
 // New or continue a game. Must be set to New or Continue
-initType Continue
+initType ##INITTYPE##
 // Slot to save the game. Must be set 1 2 3 4 or 5
-slot 1
+slot ##SLOT##
 // Show event log. Must be set off or on
-showLogs off
+showLogs ##SHOWLOGS##
 // Contact email for server admin
-serverContact email@gmail.com
+serverContact ##SERVERCONTACT##
 // No enemies
-veganMode off
+veganMode ##VEGANMODE##
 // No enemies during day time
-vegetarianMode off
+vegetarianMode ##VEGETARIANMODE##
 // Reset all structure holes when loading a save
-resetHolesMode off
+resetHolesMode ##RESETHOLESMODE##
 // Regrow 10% of cut down trees when sleeping
-treeRegrowMode off
+treeRegrowMode ##TREEREGROWMODE##
 // Allow building destruction
-allowBuildingDestruction on
+allowBuildingDestruction ##ALLOWBUILDINGDESTRUCTION##
 // Allow enemies in creative games
-allowEnemiesCreativeMode off
+allowEnemiesCreativeMode ##ALLOWENEMIESCREATIVEMODE##
 // Allow clients to use the built in debug console
-allowCheats off
+allowCheats ##ALLOWCHEATS##
 // Use full weapon damage values when attacking other players
-realisticPlayerDamage off
+realisticPlayerDamage ##REALISTICPLAYERDAMAGE##
 // Allows defining a custom folder for save slots, leave empty to use the default location
 saveFolderPath
 // Target FPS when no client is connected
-targetFpsIdle 0
+targetFpsIdle 5
 // Target FPS when there is at least one client connected
-targetFpsActive 0
+targetFpsActive 30
