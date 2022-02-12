@@ -6,8 +6,8 @@
 TIMEZONE=${TIMEZONE:-Europe/Berlin}
 
 # User and group id for the user running server
-PUID=${PUID:-0}
-PGID=${PGID:-0}
+PUID=${PUID:-1000}
+PGID=${PGID:-1000}
 
 # steam game appid
 STEAMAPPID=${STEAMAPPID:-556450}
