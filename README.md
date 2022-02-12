@@ -1,23 +1,30 @@
-## Docker - TheForest Dedicated Server
+# Docker - TheForest Dedicated Server
+
 This includes a TheForest Dedicated Server based on Docker with Wine and an example config.
 
 ## What you need to run this
+
 * Basic understanding of Linux and Docker
 
 ## Getting started
+
 WARNING: If you dont do Step 1 and 2 your server can/will not save!
-1. Create a new game server account over at https://steamcommunity.com/dev/managegameservers (Use AppID: `242760`)
+
+1. Create a new game server account over at <https://steamcommunity.com/dev/managegameservers> (Use AppID: `242760`)
 2. Insert the Login Token into the environment variable via docker-run or docker-compose (at `SERVERSTEAMACCOUNT`)
 3. Create 2 directories on your Dockernode (`/srv/tfds/steamcmd` and `/srv/tfds/game`)
 4. Start the container with the following examples:
 
 Bash:
+
 ```console
 docker run --rm -i -t -e 'SERVERSTEAMACCOUNT=YOUR_TOKEN_HERE' -p 8766:8766/tcp -p 8766:8766/udp -p 27015:27015/tcp -p 27015:27015/udp -p 27016:27016/tcp -p 27016:27016/udp -v /opt/docker/theforest:/config --name theforest-docker donimax/theforest-docker:latest
 or
 docker run --rm -i -t -e 'SERVERSTEAMACCOUNT=YOUR_TOKEN_HERE' -p 8766:8766/tcp -p 8766:8766/udp -p 27015:27015/tcp -p 27015:27015/udp -p 27016:27016/tcp -p 27016:27016/udp -v $(pwd)/theforest/config:/config --name theforest-docker donimax/theforest-docker:latest
 ```
+
 Docker-Compose:
+
 ```yaml
 version: "3.7"
 services:
