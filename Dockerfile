@@ -4,11 +4,12 @@ LABEL maintainer="Donimax"
 
 ENV WINEPREFIX=/winedata/WINE64 \
     WINEARCH=win64 \
+    USER=steam \
     DISPLAY=:1.0 \
     TIMEZONE=Europe/Berlin \
     DEBIAN_FRONTEND=noninteractive \
-    PUID=0 \
-    PGID=0 \
+    PUID=1000 \
+    PGID=1000 \
     SERVERSTEAMACCOUNT=""
 
 RUN dpkg --add-architecture i386 \
@@ -25,10 +26,14 @@ RUN dpkg --add-architecture i386 \
     && apt-get autoremove -y \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
-    && chown -R root:root /home/steam 
+    && mkdir -p /config /winedata \
+    && chown steam:steam /config \
+    && chown steam:steam /winedata \
+    && chown steam:steam /etc/bash.bashrc
 
-COPY servermanager.sh /usr/bin
-COPY defaults steamcmdinstall.txt server.cfg.example /
+
+COPY --chown=steam:steam servermanager.sh /usr/bin
+COPY --chown=steam:steam defaults steamcmdinstall.txt server.cfg.example /
 
 RUN ln -snf /usr/share/zoneinfo/$TIMEZONE /etc/localtime \
     && echo $TIMEZONE > /etc/timezone \
@@ -36,5 +41,7 @@ RUN ln -snf /usr/share/zoneinfo/$TIMEZONE /etc/localtime \
 
 EXPOSE 8766/tcp 8766/udp 27015/tcp 27015/udp 27016/tcp 27016/udp
 
+# Switch to user
+USER ${USER}
 
 CMD ["servermanager.sh"]
