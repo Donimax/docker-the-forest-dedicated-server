@@ -28,7 +28,7 @@ RUN dpkg --add-architecture i386 \
     && chown -R root:root /home/steam 
 
 COPY servermanager.sh /usr/bin
-COPY defaults server.cfg.example /
+COPY defaults steamcmdinstall.txt server.cfg.example /
 
 RUN ln -snf /usr/share/zoneinfo/$TIMEZONE /etc/localtime \
     && echo $TIMEZONE > /etc/timezone \
