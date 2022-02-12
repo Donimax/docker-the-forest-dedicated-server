@@ -14,4 +14,4 @@ services:
     volumes:
       - '/opt/docker/theforest/config:/config'
     environment:
-        - SERVERSTEAMACCOUNT=bal
+      - SERVERSTEAMACCOUNT=bal
