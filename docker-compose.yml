@@ -2,7 +2,7 @@ version: "3"
 services:
   the-forest-server-01:
     container_name: the-forest-server-01
-    image: donimax/the-forest-dedicated-server:latest
+    image: donimax/theforest-docker:latest
     restart: unless-stopped
     ports:
       - 8766:8766/tcp
