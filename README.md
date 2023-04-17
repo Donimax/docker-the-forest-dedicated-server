@@ -1,5 +1,8 @@
 # Docker - TheForest Dedicated Server
 
+[![Docker Pulls](https://img.shields.io/docker/pulls/donimax/theforest-docker)](https://hub.docker.com/r/donimax/theforest-docker)
+[![Docker Image Size (tag)](https://img.shields.io/docker/image-size/donimax/theforest-docker/latest)](https://hub.docker.com/r/donimax/theforest-docker)
+
 This includes a TheForest Dedicated Server based on Docker with Wine and an example config.
 
 ## What you need to run this
